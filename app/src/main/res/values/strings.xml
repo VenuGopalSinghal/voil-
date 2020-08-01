@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">VoilaApp01</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_common_web_view">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string-array name="states">
+
+        <item>Delhi</item>
+        <item>Haryana</item>
+        <item>Punjab</item>
+        <item>Uttar Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Bihar</item>
+        <item>WestBengal</item>
+        <item>Madhya Pradesh</item>
+        <item>Tamil Nadu</item>
+        <item>Rajasthan</item>
+        <item>Karnataka</item>
+        <item>Gujarat</item>
+        <item>Andhra Pradesh</item>
+        <item>Odisha</item>
+        <item>Telangana</item>
+        <item>Kerala</item>
+        <item>Jharkhand</item>
+        <item>Assam</item>
+        <item>Chhattisgarh</item>
+        <item>Uttarakhand</item>
+        <item>Himachal Pradesh</item>
+        <item>Tripura</item>
+        <item>Meghalaya</item>
+        <item>Manipur</item>
+        <item>Nagaland</item>
+        <item>Goa</item>
+        <item>Arunachal Pradesh</item>
+        <item>Mizoram</item>
+        <item>Sikkim</item>
+        <item>Jammu and Kashmir</item>
+        <item>Puducherry</item>
+        <item>Chandigarh</item>
+        <item>Daman and Diu</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Ladakh</item>
+        <item>Lakshadweep</item>
+
+
+
+    </string-array>
+</resources>
