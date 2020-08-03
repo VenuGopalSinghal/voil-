@@ -1,6 +1,6 @@
 package com.example.voilaapp01
 
-import android.app.Application
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,22 +10,23 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import com.example.voilaapp01.activities.CommonWebView
-import com.example.voilaapp01.activities.FilterActivity
+import com.example.voilaapp01.activities.GuideAdapter
+import com.example.voilaapp01.model.ExtraFilter
 import com.example.voilaapp01.model.SearchResponse
-import com.example.voilaapp01.model.Searchfilter
+import com.example.voilaapp01.model.SearchFilter2
 import kotlinx.android.synthetic.main.activity_home_page.*
-import kotlinx.android.synthetic.main.activity_search_page.*
-import org.intellij.lang.annotations.JdkConstants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+import kotlin.collections.ArrayList
 
 class HomePage : AppCompatActivity() {
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
-
 
 
 
@@ -78,102 +79,126 @@ class HomePage : AppCompatActivity() {
         }
 
         submit_button.setOnClickListener {
+            val intent = Intent(this, SearchPage::class.java)
+            startActivity(intent)
 
 
             /*for spinner*/
 
 
 
-        spinner_enter_destination.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {
+            spinner_enter_destination.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
 
+                    }
+
+                    override fun onItemSelected(
+                        adapterView: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        Toast.makeText(
+                            this@HomePage,
+                            "You selected ${adapterView?.getItemAtPosition(position).toString()}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        var State: String = adapterView?.getItemAtPosition(position) as String
+
+                    }
                 }
 
-                override fun onItemSelected(
-                    adapterView: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    Toast.makeText(
-                        this@HomePage,
-                        "You selected ${adapterView?.getItemAtPosition(position).toString()}",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    var State: String = adapterView?.getItemAtPosition(position) as String
 
-                }
+            //from Calender
+            val fromCalendar = Calendar.getInstance()
+            val year = fromCalendar.get(Calendar.YEAR)
+            val month = fromCalendar.get(Calendar.MONTH)
+            val day = fromCalendar.get(Calendar.DAY_OF_MONTH)
+
+
+
+           /* fromDate.setOnClickListener {
+                val fromDatePickerDialog = DatePickerDialog(
+                    this,
+                    DatePickerDialog.OnDateSetListener { view, fyear, fmonth, fdayOfMonth ->
+
+                        tv_fromdate.text = "" + fdayOfMonth + "/" + (fmonth + 1) + "/" + fyear
+                    },
+                    year,
+                    month,
+                    day
+                )
+                fromDatePickerDialog.show()
             }
 
+            toDate.setOnClickListener {
+                val toDatePickerDialog = DatePickerDialog(
+                    this, DatePickerDialog.OnDateSetListener { view, tyear, tmonth, tdayOfMonth ->
 
+                        tv_todate.text = "" + tdayOfMonth + "/" + (tmonth + 1) + "/" + tyear
 
-
-
-        //from Calender
-        val fromCalendar = Calendar.getInstance()
-        //  val date =SimpleDateFormat("yyyy-mm-dd").format(fromCalendar)
-        val year = fromCalendar.get(Calendar.YEAR)
-        var month = fromCalendar.get(Calendar.MONTH)
-        val day = fromCalendar.get(Calendar.DAY_OF_MONTH)
-
-//        TouristLogin.token
-
-
-//____________________________________________________________________________________________________
-
-/*
-*//*From Date*//*
-        fromDate.setOnClickListener {
-            val fromDatePickerDialog = DatePickerDialog(
-                this,
-                DatePickerDialog.OnDateSetListener { view, fyear, fmonth, fdayOfMonth ->
-
-
-                    tv_fromdate.text = "" + fdayOfMonth + "/" + (fmonth + 1) + "/" + fyear
-                    val fromDate: String =
-                        (fyear.toString() + "-" + "0" + (fmonth + 1).toString() + "-" + "0" + fdayOfMonth.toString())
-                    Toast.makeText(this, fromDate, Toast.LENGTH_SHORT).show()
-
-
-                },
-                year,
-                month,
-                day
-            )
-            fromDatePickerDialog.show()
-        }*/
-
-
+                    }
+                    ,
+                    year,
+                    month,
+                    day
+                )
+                toDatePickerDialog.show()
+            }
+*/
 
 //_________________________________________________________________________________________________
+        }
 
-
-        val filterinput = Searchfilter(
-            "Delhi", "2020-07-04",
-            "2020-07-07", 5, 2, false
+        val filterinput = SearchFilter2(
+            "Delhi", "2020-08-04",
+            "2020-08-07", 5
         )
 
-        val filterRequest = RetrofitClient.create().search(filterinput)
 
-        filterRequest.enqueue(object : Callback<SearchResponse> {
-            override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                Log.e("thisisune",t.message)
+        val filterRequest = RetrofitClient.create().search(filterinput)
+        /*enqueue method*/
+        filterRequest.enqueue((object : Callback<SearchResponse2> {
+
+            /*On Faliure*/
+
+            override fun onFailure(call: Call<SearchResponse2>, t: Throwable) {
+                Log.e("thisisune", t.message)
             }
+
+            /*On response*/
 
             override fun onResponse(
-                call: Call<SearchResponse>,
-                response: Response<SearchResponse>
-            )
-            {
+                call: Call<SearchResponse2>,
+                response: Response<SearchResponse2>
+            ) {
                 val searcherror = response.toString()
-                Log.d("thisisthemferror", searcherror)
+               // Log.d("rzzzzzzzzzzzzzz", response.body()!!.guides[1].city)
+
+
+                guidedetails = response.body()!!.guides as ArrayList<Guide>
+                Log.d("guideDetailsResponse", guidedetails.toString())
+
+                /* for (item in guidedetails) {
+                     var guideName: String = item.name
+                     var guidecity: String = item.city
+                     var guide_chargeperhead: Int = item.perHeadCharge
+                     var guideimage: String = item.picUrl
+                 }*/
+
             }
-        })
+
+
+        }))
+
 
     }
+
+    companion object {
+        var guidedetails = ArrayList<Guide>()
     }
 
-    }
+}
 
 

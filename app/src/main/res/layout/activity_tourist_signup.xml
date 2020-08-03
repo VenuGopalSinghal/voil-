@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.TouristSignup">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".TouristLogin">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center"
+                    android:text="Welcome"
+                    android:textColor="#363A43"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/errorview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:gravity="center"
+                    android:text="Lets get you Started"
+                    android:textColor="#7a8089"
+                    android:textSize="16sp" />
+
+                <!--Name-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_name_tourist"
+                        android:layout_width="match_parent"
+                        android:inputType="text"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--Phone number-->
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_number_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number (10 Digits)"
+                        android:inputType="phone"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!--            Email-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_email_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Nationality-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_nation_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nationality"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <!--Gender-->
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_gender_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name Prefix"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--AGE-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_age_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Age"
+                        android:inputType="number"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Password-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_pass_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Confirm Password-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_SU_confirmpass_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password"
+                        android:textColor="#363A43"
+                        android:textColorHint="#7a8089" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.tuyenmonkey.mkloader.MKLoader
+                    android:id="@+id/loader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:mk_color="@color/colorPrimary"
+                    app:mk_type="Worm" />
+                <!--            LOGIN BUTTON-->
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_SU_tourist"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+
+                    android:background="@color/colorPrimary"
+                    android:text="Login"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:cornerRadius="5dp" />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <!--skip button-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_skip_SU_tourist"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="0dp"
+            android:elevation="0dp"
+            android:text="Skip for now..."
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</ScrollView>

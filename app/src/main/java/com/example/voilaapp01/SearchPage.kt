@@ -1,30 +1,37 @@
 package com.example.voilaapp01
 
-import android.app.DatePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.*
-import com.example.voilaapp01.activities.FilterActivity
-import com.example.voilaapp01.model.GuideSearchFilter
-import com.example.voilaapp01.model.SearchResponse
-import com.example.voilaapp01.model.Searchfilter
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.voilaapp01.activities.GuideAdapter
+import com.example.voilaapp01.model.ModelGuideRecycler
 import kotlinx.android.synthetic.main.activity_search_page.*
-import retrofit2.Call
-import java.util.*
 //import javax.security.auth.callback.Callback
-import retrofit2.Callback
-import retrofit2.Response
+import kotlin.collections.ArrayList
 
 class SearchPage : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_page)
+
+
+
+//
+       val arrayList = HomePage.guidedetails
+//        arrayList.add(ModelGuideRecycler("venu",400.toString(),"sewdawdx",R.id.ClassicSpinner)
+
+        Log.d("guideDetailsSeatchPage", arrayList.toString())
+        val guideRecyclerView:RecyclerView  = findViewById(R.id.rv_guide)
+        var linearLayoutManager = LinearLayoutManager(this)
+        guideRecyclerView.layoutManager = linearLayoutManager
+
+
+        val guideAdapter =GuideAdapter(arrayList)
+        guideRecyclerView.adapter = guideAdapter
+
     }
 }
 

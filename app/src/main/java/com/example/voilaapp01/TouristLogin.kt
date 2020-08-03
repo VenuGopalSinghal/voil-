@@ -7,17 +7,13 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.voilaapp01.activities.CommonWebView
+import com.example.voilaapp01.activities.TouristSignup
 import com.example.voilaapp01.model.LoginResponse
-import com.example.voilaapp01.model.User
-import com.google.android.material.button.MaterialButton
-import com.google.gson.JsonObject
+import com.example.voilaapp01.model.UserLogin
 import kotlinx.android.synthetic.main.activity_tourist_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 class TouristLogin : AppCompatActivity() {
@@ -26,8 +22,15 @@ class TouristLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tourist_login)
 
+        btn_register_tourist.setOnClickListener {
+            val intent= Intent(this,TouristSignup::class.java)
+            startActivity(intent)
+        }
+
 
         /*define the local variable email and password*/
+
+
 
         btn_login_tourist.setOnClickListener {
             loader.visibility=View.VISIBLE.times(Short.MIN_VALUE)
@@ -37,7 +40,7 @@ class TouristLogin : AppCompatActivity() {
 
             /*feeding variables to User and storing them in postParams */
 
-            val postParams = User(email, password)
+            val postParams = UserLogin(email, password)
 
             val loginRequest = RetrofitClient.create().login(postParams)
             loginRequest.enqueue(object : Callback<LoginResponse> {
@@ -51,7 +54,6 @@ class TouristLogin : AppCompatActivity() {
 
 
                 }
-
                 /*On RESPONSE*/
                 override fun onResponse(
                     call: Call<LoginResponse>,
@@ -94,8 +96,7 @@ class TouristLogin : AppCompatActivity() {
 
             btn_register_tourist.isClickable
             btn_register_tourist.setOnClickListener {
-                val intent = Intent(this, CommonWebView::class.java)
-                intent.putExtra("RegisterTourist", "https://voilas.herokuapp.com/tourists/register")
+                val intent = Intent(this, TouristSignup::class.java)
                 startActivity(intent)
             }
 

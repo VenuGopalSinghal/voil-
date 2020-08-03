@@ -7,17 +7,24 @@ import retrofit2.http.*
 
 interface Api {
 
+
     @POST("/login/tourist")
 
     fun login(
-        @Body user: User
+        @Body userLogin: UserLogin
     ): Call<LoginResponse>
 
 
 
-    @POST("/tourist/guides")
+    @POST("/searchGuidesAndDeals")
     fun search(
-        @Body searchFilter: Searchfilter
-    ):Call<SearchResponse>
+        @Body searchFilter2: SearchFilter2
+    ):Call<SearchResponse2>
+
+
+    @POST("/signup/tourist")
+    fun signup(
+        @Body userSignup: UserSignup
+    ):Call<SignupResponse>
 
 }

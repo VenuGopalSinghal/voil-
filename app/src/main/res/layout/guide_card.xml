@@ -4,98 +4,102 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
 
-
-
-
-
-
-
-android:id="@+id/cv_guide"
-android:layout_width="match_parent"
-android:layout_height="200dp"
-android:layout_margin="10dp"
-android:background="@drawable/owl_bird_"
-android:elevation="10dp"
-app:cardCornerRadius="10dp"
-app:layout_constraintBottom_toTopOf="@id/cv_guide2"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent">
-
-<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cv_guide"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/owl_bird_"
+    android:elevation="10dp"
+    app:cardCornerRadius="10dp"
+    app:layout_constraintBottom_toTopOf="@id/cv_guide2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="485dp"
-        android:layout_height="281dp"
-        android:filterTouchesWhenObscured="false"
-        android:importantForAutofill="auto"
-        android:src="@drawable/owl_bird_"
-        android:tint="#616161"
-        android:tintMode="multiply"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493" />
+        <ImageView
+            android:id="@+id/guide_imageView"
+            android:layout_width="485dp"
+            android:layout_height="281dp"
+            android:filterTouchesWhenObscured="false"
+            android:importantForAutofill="auto"
+            android:src="@drawable/owl_bird_"
+            android:tint="#616161"
+            android:tintMode="multiply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.493" />
 
-    <TextView
-        android:id="@+id/tv_guideName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Venugopal Signhal"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tv_guideName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Venugopal Signhal"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_guideRate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="₹400/Head/Day"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/white"
+            android:text=" ₹: "
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_guideRate" />
 
-    <Button
-        android:id="@+id/btn_booknow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="5dp"
-        android:background="@android:color/holo_blue_dark"
-        android:paddingLeft="5dp"
-        android:paddingRight="10dp"
-        android:text="BOOK NOW"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_guideRate"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/tv_guideRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="₹400/Head"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_guideReviews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:text="5-Star Reviews : 22"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_booknow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/holo_blue_dark"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:text="View Profile"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_guideRate"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_guideReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="5-Star Reviews : 22"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

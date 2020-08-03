@@ -26,19 +26,20 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_guide"
+        tools:listitem="@layout/guide_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ImageView
+   <!-- <ImageView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:elevation="10dp"
         android:src="@drawable/deals_seperator" />
-
-    <androidx.recyclerview.widget.RecyclerView
+-->
+ <!--   <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_deals"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"/>-->
 
 
 </LinearLayout>

@@ -106,36 +106,45 @@
                     android:orientation="horizontal">
 
 
-                    <Button
-                        android:id="@+id/fromDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:elevation="5dp"
-                        android:background="@android:color/black"
-                        android:text="From"
-                        app:cornerRadius="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="->"
-                        android:textSize="32sp" />
+                        android:layout_margin="20dp">
 
-                    <Button
-                        android:id="@+id/toDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:elevation="5dp"
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_fromdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="date"
+                            android:hint="From"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/white"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
                         android:layout_weight="1"
-                        app:cornerRadius="10dp"
-                        android:background="@android:color/white"
-                        android:text="to" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/et_todate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="date"
+                            android:hint="To"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/white"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -172,6 +181,7 @@
                     <androidx.appcompat.widget.AppCompatEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="number"
                         android:hint="Number of members"
                         android:textColor="@android:color/black"
                         android:textColorHint="@android:color/white"
