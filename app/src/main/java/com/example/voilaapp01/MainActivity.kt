@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity(){
 
 
 
+
+
         btn_tourist.setOnClickListener {
             val intent = Intent(this, TouristLogin::class.java)
             startActivity(intent)

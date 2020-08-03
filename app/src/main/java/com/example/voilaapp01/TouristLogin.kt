@@ -27,6 +27,11 @@ class TouristLogin : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btn_skip_tourist.setOnClickListener {
+            val intent = Intent(this,HomePage::class.java)
+            startActivity(intent)
+        }
+
 
         /*define the local variable email and password*/
 
